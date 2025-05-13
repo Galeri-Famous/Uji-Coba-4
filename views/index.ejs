@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Cetak Kartu Siswa</title>
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
   <div class="container">
@@ -11,6 +11,11 @@
       <input type="text" name="nama" placeholder="Nama" required>
       <input type="text" name="nisn" placeholder="NISN" required>
       <input type="text" name="ttl" placeholder="Tempat, Tanggal Lahir" required>
+      <select name="jk" required>
+        <option value="">Pilih Jenis Kelamin</option>
+        <option value="Laki-laki">Laki-laki</option>
+        <option value="Perempuan">Perempuan</option>
+      </select>
       <input type="text" name="alamat" placeholder="Alamat" required>
       <input type="file" name="foto" accept="image/*" required>
       <button type="submit">Cetak Kartu</button>
