@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cetak Kartu Siswa</title>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Cetak Kartu Siswa</h1>
+    <form id="kartuForm" enctype="multipart/form-data">
+      <input type="text" name="nama" placeholder="Nama" required>
+      <input type="text" name="nisn" placeholder="NISN" required>
+      <input type="text" name="ttl" placeholder="Tempat, Tanggal Lahir" required>
+      <select name="jk" required>
+        <option value="">Pilih Jenis Kelamin</option>
+        <option value="Laki-laki">Laki-laki</option>
+        <option value="Perempuan">Perempuan</option>
+      </select>
+      <input type="text" name="alamat" placeholder="Alamat" required>
+      <input type="file" name="foto" accept="image/*" required>
+      <div class="button-group">
+        <button type="submit" formaction="/preview" formmethod="POST">Preview</button>
+        <button type="submit" formaction="/generate" formmethod="POST">Download PDF</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
