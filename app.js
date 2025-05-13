@@ -33,6 +33,6 @@ app.post('/generate', upload.single('foto'), async (req, res) => {
   res.download(pdfPath);
 });
 
-app.listen(port, () => {
-  console.log(`Server jalan di http://localhost:${port}`);
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server jalan di http://0.0.0.0:${port}`);
 });
