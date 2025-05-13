@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
 });
 
 // Preview kartu langsung ke browser (tanpa PDF)
-app.post('/preview', upload.single('foto'), (req, res) => {
+app.post('/generate', upload.single('foto'), async (req, res) => {
   const data = req.body;
   data.foto = req.file.filename;
   data.tanggal = moment().format('D MMMM YYYY');
