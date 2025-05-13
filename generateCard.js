@@ -1,22 +1,25 @@
 const ejs = require('ejs');
 const fs = require('fs');
 const path = require('path');
-const pdf = require('html-pdf');
+const chromium = require('@sparticuz/chromium-min');
+const puppeteer = require('puppeteer-core');
 
 async function generateCard(data) {
   const html = await ejs.renderFile(path.join(__dirname, 'views', 'kartu.ejs'), data);
-
   const filePath = path.join(__dirname, 'uploads', `${Date.now()}-kartu.pdf`);
 
-  return new Promise((resolve, reject) => {
-    pdf.create(html, {
-      width: '1012px',
-      height: '638px'
-    }).toFile(filePath, (err, res) => {
-      if (err) return reject(err);
-      resolve(filePath);
-    });
+  const browser = await puppeteer.launch({
+    args: chromium.args,
+    executablePath: await chromium.executablePath(),
+    headless: chromium.headless,
   });
+
+  const page = await browser.newPage();
+  await page.setContent(html, { waitUntil: 'networkidle0' });
+  await page.pdf({ path: filePath, width: '1012px', height: '638px' });
+
+  await browser.close();
+  return filePath;
 }
 
 module.exports = { generateCard };
