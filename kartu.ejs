@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { margin: 0; }
+    .card {
+      width: 1012px;
+      height: 638px;
+      position: relative;
+      background-image: url("/images/depan.png");
+      background-size: cover;
+    }
+    .foto {
+      position: absolute;
+      top: 160px;
+      left: 80px;
+      width: 130px;
+      height: 180px;
+      border: 1px solid black;
+    }
+    .text {
+      position: absolute;
+      font-family: serif;
+      font-size: 20px;
+    }
+    .nama { top: 170px; left: 250px; }
+    .nisn { top: 210px; left: 250px; }
+    .ttl  { top: 250px; left: 250px; }
+    .alamat { top: 290px; left: 250px; }
+    .tanggal { position: absolute; bottom: 140px; right: 100px; font-size: 16px; }
+    .ttd { position: absolute; bottom: 70px; right: 100px; width: 120px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="/uploads/<%= foto %>" class="foto">
+    <div class="text nama">: <%= nama %></div>
+    <div class="text nisn">: <%= nisn %></div>
+    <div class="text ttl">: <%= ttl %></div>
+    <div class="text alamat">: <%= alamat %></div>
+    <div class="text tanggal">Brebes, <%= tanggal %></div>
+    <img src="/images/stempel.png" class="ttd">
+  </div>
+</body>
+</html>
