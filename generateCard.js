@@ -8,11 +8,17 @@ async function generateCard(data) {
   const html = await ejs.renderFile(path.join(__dirname, 'views', 'kartu.ejs'), data);
   const filePath = path.join(__dirname, 'uploads', `${Date.now()}-kartu.pdf`);
 
-  const browser = await puppeteer.launch({
-    args: chromium.args,
-    executablePath: await chromium.executablePath(),
-    headless: chromium.headless,
-  });
+const executablePath = await chromium.executablePath();
+
+if (!executablePath) {
+  throw new Error("Chromium executable path not found.");
+}
+
+const browser = await puppeteer.launch({
+  args: chromium.args,
+  executablePath,
+  headless: chromium.headless,
+});
 
   const page = await browser.newPage();
   await page.setContent(html, { waitUntil: 'networkidle0' });
