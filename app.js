@@ -28,7 +28,7 @@ app.post('/preview', upload.single('foto'), (req, res) => {
   const data = req.body;
   data.foto = req.file.filename;
   data.tanggal = moment().format('D MMMM YYYY');
-  res.render('kartu', data); // tampilkan langsung ke browser
+  res.render('kartu', data);
 });
 
   const pdfPath = await generateCard(data);
