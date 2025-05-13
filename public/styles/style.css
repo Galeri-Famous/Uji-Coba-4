@@ -1,0 +1,34 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f0f0;
+}
+.kartu {
+  width: 1012px;
+  height: 638px;
+  position: relative;
+  background-image: url('/images/kartu-depan.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.foto {
+  position: absolute;
+  top: 150px;
+  left: 720px;
+  width: 120px;
+  height: 160px;
+  border: 2px solid #000;
+}
+.ttd {
+  position: absolute;
+  bottom: 80px;
+  right: 100px;
+  width: 120px;
+}
+.info {
+  position: absolute;
+  top: 140px;
+  left: 150px;
+  color: #000;
+  font-size: 18px;
+  line-height: 1.6;
+}
