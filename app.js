@@ -24,10 +24,12 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
-app.post('/generate', upload.single('foto'), async (req, res) => {
+app.post('/preview', upload.single('foto'), (req, res) => {
   const data = req.body;
   data.foto = req.file.filename;
   data.tanggal = moment().format('D MMMM YYYY');
+  res.render('kartu', data); // tampilkan langsung ke browser
+});
 
   const pdfPath = await generateCard(data);
   res.download(pdfPath);
