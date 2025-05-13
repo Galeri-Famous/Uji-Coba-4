@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="/styles/style.css" />
+  <title>Kartu Siswa</title>
+</head>
+<body>
+  <div class="kartu">
+    <img src="/uploads/<%= foto %>" class="foto" alt="Foto Siswa" />
+    <img src="/images/ttd.png" class="ttd" alt="Tanda Tangan" />
+    <div class="info">
+      <p><strong>Nama:</strong> <%= nama %></p>
+      <p><strong>NISN:</strong> <%= nisn %></p>
+      <p><strong>Tempat, Tanggal Lahir:</strong> <%= ttl %></p>
+      <p><strong>Jenis Kelamin:</strong> <%= jk %></p>
+      <p><strong>Alamat:</strong> <%= alamat %></p>
+      <p><strong>Tanggal Cetak:</strong> <%= tanggal %></p>
+    </div>
+  </div>
+</body>
+</html>
