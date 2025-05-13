@@ -11,6 +11,6 @@
     "moment": "^2.29.4",
     "multer": "^1.4.5-lts.1",
     "puppeteer-core": "^21.3.8",
-    "@sparticuz/chromium-min": "^110.0.0"
+    "@sparticuz/chromium": "^119.0.0"
   }
 }
